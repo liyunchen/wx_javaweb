@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>WxAuth</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+      <servlet-name>wxCallBack</servlet-name>
+      <servlet-class>com.xingshang.servlet.CallBackSerclet</servlet-class>
+      <init-param>
+          <param-name>dbUrl</param-name>
+          <param-value>jdbc:mysql://localhost:3306/wxauth</param-value>
+      </init-param>
+      <init-param>
+          <param-name>driverClassName</param-name>
+          <param-value>com.mysql.jdbc.Driver</param-value>
+      </init-param>
+      <init-param>
+          <param-name>userName</param-name>
+          <param-value>root</param-value>
+      </init-param>
+      <init-param>
+          <param-name>passWord</param-name>
+          <param-value>123456</param-value>
+      </init-param>
+      <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+      <servlet-name>wxCallBack</servlet-name>
+      <url-pattern>/wxCallBack</url-pattern>
+  </servlet-mapping>
+</web-app>
